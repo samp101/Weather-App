@@ -1,0 +1,35 @@
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+}
+
+.current-day-container{
+    width:20%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+
+}
+.right-container{
+    width:80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.InputBar{
+    background-color: azure;
+
+}
+.forecast-container{
+background-color: blue;
+}
