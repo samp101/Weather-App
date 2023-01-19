@@ -20,7 +20,6 @@ function App(props) {
     alignItems:'center',
 }
 const [celsius,setCelsius] = useState(true) 
-console.log('b');
 
 return (
     <div className='App' >

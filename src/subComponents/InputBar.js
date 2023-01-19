@@ -12,6 +12,7 @@ const InputBar = (props) =>{
 
     const changeMetric = ()=>{
       celsius ? setCelsius(false): setCelsius(true)
+      props.createSearch(userSearch||props.citiesApi.name)
     } 
     
     return(

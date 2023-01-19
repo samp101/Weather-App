@@ -1,14 +1,15 @@
 
 
 import {AppContext} from '../App'
-import {useContext} from 'react'
-import {useEffect} from 'react'
+import {useEffect, useContext} from 'react'
 import { forecasts } from '../redux/action'
 import {connect} from 'react-redux'
 
 
 const Weather5DayForecast = (props)=>{
-    const {cityKey} = useContext(AppContext)
+
+    const {cityKey,celsius} = useContext(AppContext)
+
     const style = {
         width:'80vw',
         height:'400px',
@@ -23,7 +24,7 @@ const Weather5DayForecast = (props)=>{
     
     useEffect(()=>{
     if(cityKey){
-        props.getForcast(cityKey)
+        props.getForcast(cityKey,celsius)
     }
     },[props.citiesApi])
     
@@ -67,7 +68,7 @@ const statePropsToState = (state)=>{
   } 
   const stateDispatchToProps = (dispatch)=>{
     return {
-        getForcast : (e)=>dispatch(forecasts(e)),
+        getForcast : (e,celsius)=>dispatch(forecasts(e,celsius)),
     }
   } 
   

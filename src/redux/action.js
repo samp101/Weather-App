@@ -35,9 +35,13 @@ export const onOpening = () => (dispatch,createStore)=> {
     }
 
 }
-export const forecasts = (cityKey) => (dispatch,createStore)=> {
+
+export const forecasts = (cityKey,celsuis) => (dispatch,createStore)=> {
+
     try{
-        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${apiKey}&metric=true`)
+        let unit;
+        celsuis==true ? unit = 'true' : unit = 'false'
+        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${apiKey}&metric=${unit}`)
                     .then(res=>res.json())
                     .then(data=>{
                         return dispatch({
